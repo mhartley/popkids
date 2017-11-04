@@ -24,3 +24,6 @@ class Event(models.Model):
 	datetime = models.DateTimeField()
 	text = models.CharField(max_length=256)
 	node_id = models.CharField(max_length=30)
+
+class Postdata(models.Model):
+	textdump = models.TextField(null = True)

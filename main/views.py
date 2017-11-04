@@ -6,6 +6,10 @@ from django.http import HttpResponse, JsonResponse
 
 def sendgridpost(request):
 	if request.POST:
-		print(request.POST.keys())
+		email = request.POST.get('email')
+		capture = Postdata(textdump = email)
+
+
+
 	return HttpResponse('we got a page.')
 		
