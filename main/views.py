@@ -19,29 +19,29 @@ def sendgridpost(request):
 	return HttpResponse('we got a page.')
 
 
-
-  token = os.environ.get('EVENTBRITE_OAUTH_PERSONAL')
+token = os.environ.get('EVENTBRITE_OAUTH_PERSONAL')
 
 eventbrite = Eventbrite(token)
 user = eventbrite.get_user()
 
+#  If you find you want to parse information from an event, you can use this method. Not sure how helpful the information is for our purposes so leaving it commented out.
 
-def requests.get(
-    "https://www.eventbriteapi.com/v3/users/me/events/",
-    headers = {
-        "Authorization": "Bearer 5YJ4X6TACURDGGUKRTVE",
-    },
-    verify = True,  # Verify SSL certificate
-)
+# events = requests.get(
+#     "https://www.eventbriteapi.com/v3/users/me/events/",
+#     headers = {
+#         "Authorization": "Bearer 5YJ4X6TACURDGGUKRTVE",
+#     },
+#     verify = True,  # Verify SSL certificate
+# )
 
-return events.json()
+# return events.json()
 
 attendees = requests.get(
   "https://www.eventbriteapi.com/v3/users/me/owned_event_attendees/",
     headers = {
         "Authorization": "Bearer 5YJ4X6TACURDGGUKRTVE",
     },
-    verify = True,  # Verify SSL certificate
+    verify = True,
   )
 
 attendees_object = attendees.json()['attendees']
@@ -51,4 +51,7 @@ last_name = attendees_object[0]['profile']['last_name']
 email = attendees_object[0]['profile']['email']
 attendance_status = attendees_object[0]['status']
 
-
+return first_name
+return last_name
+return email
+return attendance_status
