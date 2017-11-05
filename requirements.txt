@@ -1,7 +1,6 @@
 
 dj-database-url==0.4.1
 Django==1.11.1
-django-sendgrid-events==1.2
 gunicorn==19.6.0
 jsonfield==2.0.2
 psycopg2==2.6.2
