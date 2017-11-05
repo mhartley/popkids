@@ -20,6 +20,7 @@ class Person(models.Model):
 class Event(models.Model):
 	person = models.ForeignKey(Person)
 	event_type = models.CharField(max_length=30, null=True)
+	associate_id = models.CharField(max_length=100, null = True)
 	score_increment = models.IntegerField()
 	datetime = models.DateTimeField()
 	text = models.CharField(max_length=256)

@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     'main',
+    "sendgrid_events",
 ]
 
 MIDDLEWARE = [
